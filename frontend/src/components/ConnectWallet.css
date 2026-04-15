@@ -1,0 +1,62 @@
+.wallet-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet-error {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.wallet-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.wallet-btn.connect {
+  background-color: #3498db;
+  color: white;
+}
+
+.wallet-btn.connect:hover {
+  background-color: #2980b9;
+}
+
+.wallet-btn.connect:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.wallet-btn.disconnect {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.wallet-btn.disconnect:hover {
+  background-color: #c0392b;
+}
+
+.wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ecf0f1;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.wallet-address {
+  font-family: monospace;
+  font-size: 12px;
+  color: #2c3e50;
+  font-weight: bold;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Management System - Website Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .app {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+        }
+
+        .wallet-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .wallet-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+
+        .members-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .members-section h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .members-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .member-card {
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+            padding: 15px;
+            background-color: #fafafa;
+            transition: box-shadow 0.3s;
+        }
+
+        .member-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .member-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .member-header h3 {
+            color: #2c3e50;
+            font-size: 18px;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            background-color: #27ae60;
+        }
+
+        .status.inactive {
+            background-color: #e74c3c;
+        }
+
+        .member-info {
+            margin-bottom: 15px;
+        }
+
+        .member-info p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .member-info strong {
+            color: #2c3e50;
+        }
+
+        .member-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 12px;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #229954;
+        }
+
+        .btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .members-list {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .controls button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Gym Management System</h1>
+            <button class="wallet-btn">Connect Wallet</button>
+        </header>
+
+        <main class="main-content">
+            <div class="controls">
+                <button class="btn btn-primary">Add New Member</button>
+                <button class="btn btn-secondary">Refresh</button>
+            </div>
+
+            <div class="members-section">
+                <h2>Members (4)</h2>
+                
+                <div class="members-list">
+                    <!-- Member 1 -->
+                    <div class="member-card">
+                        <div class="member-header">
+                            <h3>John Doe</h3>
+                            <span class="status">ACTIVE</span>
+                        </div>
+                        <div class="member-info">
+                            <p><strong>Email:</strong> john.doe@email.com</p>
+                            <p><strong>Phone:</strong> 9876543210</p>
+                            <p><strong>Type:</strong> regular</p>
+                            <p><strong>Plan:</strong> basic</p>
+                            <p><strong>Attendance:</strong> 12</p>
+                            <p><strong>Loyalty Points:</strong> 60</p>
+                            <p><strong>Amount Paid:</strong> 6500</p>
+                        </div>
+                        <div class="member-actions">
+                            <button class="btn btn-small btn-success">Mark Attendance</button>
+                            <button class="btn btn-small btn-danger">Deactivate</button>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="member-card">
+                        <div class="member-header">
+                            <h3>Sarah Smith</h3>
+                            <span class="status">ACTIVE</span>
+                        </div>
+                        <div class="member-info">
+                            <p><strong>Email:</strong> sarah.smith@email.com</p>
+                            <p><strong>Phone:</strong> 9123456789</p>
+                            <p><strong>Type:</strong> premium</p>
+                            <p><strong>Plan:</strong> deluxe</p>
+                            <p><strong>Attendance:</strong> 25</p>
+                            <p><strong>Loyalty Points:</strong> 250</p>
+                            <p><strong>Amount Paid:</strong> 50000</p>
+                        </div>
+                        <div class="member-actions">
+                            <button class="btn btn-small btn-success">Mark Attendance</button>
+                            <button class="btn btn-small btn-danger">Deactivate</button>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="member-card">
+                        <div class="member-header">
+                            <h3>Mike Johnson</h3>
+                            <span class="status">ACTIVE</span>
+                        </div>
+                        <div class="member-info">
+                            <p><strong>Email:</strong> mike.johnson@email.com</p>
+                            <p><strong>Phone:</strong> 8765432109</p>
+                            <p><strong>Type:</strong> regular</p>
+                            <p><strong>Plan:</strong> standard</p>
+                            <p><strong>Attendance:</strong> 8</p>
+                            <p><strong>Loyalty Points:</strong> 40</p>
+                            <p><strong>Amount Paid:</strong> 12000</p>
+                        </div>
+                        <div class="member-actions">
+                            <button class="btn btn-small btn-success">Mark Attendance</button>
+                            <button class="btn btn-small btn-danger">Deactivate</button>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="member-card">
+                        <div class="member-header">
+                            <h3>Emma Wilson</h3>
+                            <span class="status inactive">INACTIVE</span>
+                        </div>
+                        <div class="member-info">
+                            <p><strong>Email:</strong> emma.wilson@email.com</p>
+                            <p><strong>Phone:</strong> 7654321098</p>
+                            <p><strong>Type:</strong> regular</p>
+                            <p><strong>Plan:</strong> basic</p>
+                            <p><strong>Attendance:</strong> 3</p>
+                            <p><strong>Loyalty Points:</strong> 15</p>
+                            <p><strong>Amount Paid:</strong> 0</p>
+                        </div>
+                        <div class="member-actions">
+                            <button class="btn btn-small btn-success">Mark Attendance</button>
+                            <button class="btn btn-small btn-success">Activate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

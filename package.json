@@ -1,0 +1,45 @@
+{
+  "name": "gym-management-system",
+  "version": "1.0.0",
+  "description": "Gym Management System - Hybrid DApp with Ethereum Blockchain Integration",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../contracts && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm start",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:contracts": "cd contracts && npm start",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend && npm run test:contracts",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:contracts": "cd contracts && npm test",
+    "deploy:contracts": "cd contracts && npx hardhat run scripts/deploy.js --network sepolia",
+    "verify:contracts": "cd contracts && npx hardhat verify",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,sol}\"",
+    "clean": "rm -rf node_modules backend/node_modules frontend/node_modules contracts/node_modules && rm -rf dist build artifacts cache coverage"
+  },
+  "keywords": [
+    "gym",
+    "blockchain",
+    "ethereum",
+    "dapp",
+    "web3",
+    "smart-contracts"
+  ],
+  "author": "Ujwal Pathak (02650380)",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
